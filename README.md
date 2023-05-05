@@ -290,25 +290,96 @@
     2.15. Listar el contenido del directorio DIR3 en su home y luego hacer un listado del contenido de su hombre en una sola línea de comando. [Utilice ||]
         ❯ mkdir DIR3 || cd DIR3 || ls || cd .. || ls
     2.16. En segundo plano coloque en un archivo practica216 el contenido del directorio raíz (carpetas y archivos).
+        ❯ sudo ls -a /root > practica216
+        ❯ cat practica216
+        .
+        ..
+        .bash_history
+        .bashrc
+        .config
+        .docker
+        .local
+        .npm
+        .profile
+        .viminfo
     2.17. Crear con cat el archivo practica217 con los siguientes datos: Uno, Dos, Tres, Cuatro, Cinco.
+        ❯ cat > practica217
+        Uno, dos, tres, cuatro, cinco
     2.18. Crear con cat el archivo practica218 con los siguientes datos: 12, 15, 20, 40.
+        ❯ cat > practica218
+        12, 15, 20, 40
     2.19. Concatene los dos archivos anteriores en un archivo llamado practica219.
+        ❯ cat practica217 practica218 > practica220
+        ❯ cat practica220
+        Uno, dos, tres, cuatro, cinco
+        12, 15, 20, 40
     2.20. Ordene el archivo practica217 y coloque el resultado en el archivo practica220.
+        ❯ sort practica217>practica220
+        ❯ cat practica220
+        Uno, dos, tres, cuatro, cinco
     2.21. Ordene el archivo practica218 y muestre el contenido.
+        ❯ sort practica218
+        12, 15, 20, 40
     2.22. Busque la palabra “ar” en todos los archivos de su home.
+        grep -r "ar" /home
     2.23. Muestre el números de líneas, palabras, y caracteres del archivo practica220.
+        ❯ wc -l -w -c practica220
+        1  5 30 practica220
     2.24. Busque el archivo: bash_profile
+        ❯ find bash_profile
+        find: ‘bash_profile’: No such file or directory
     2.25. Busque el archivo: bash_logout
+        ❯ find bash_logout
+        find: ‘bash_logout’: No such file or directory
     2.26. En el caso de que en el punto 2.11 tenga un mensaje de error por no poseer los derechos, redireccione el mensaje de error al archivo
     /dev/practica226.
+        #No se posee el error
+        #opcional error
+        ❯ write usuario1 2> archivo226
+        ❯ cat archivo226
+        write: usuario1 is not logged in
     2.27. Visualice todos los archivos de su directorio home que hayan sido modificados en los últimos 10 días.
+        ❯ find * -mtime +9 -ls
     2.28. Cree un archivo llamado practica228 con los siguientes datos: Ana, Ana, Lourdes, Javier, Maria, Maria, Marcos, Sara, Vanesa.
+        ❯ cat >practica228
+        Ana, Ana, Lourdes, Javier, Maria, Maria, Marcos, Sara, Vanesa
     2.29. En un archivo llamado practica229 coloque aquellos nombres que no se repiten del archivo practica228.
+        ❯ uniq practica228>practica229
     2.30. Muestre el contenido del archivo practica229.
+        ❯ cat practica229
+        Ana,
+        Lourdes,
+        Javeir,
+        Maria,
+        Marcos,
+        Sara,
+        Vanesa
     2.31. En un archivo llamado practica231 coloque aquellos nombres que se repiten del archivo practica228.
+        ❯ uniq -d practica228>practica231
     2.32. Muestre el contenido del archivo practica231
+        ❯ cat practica231
+        Ana,
+        Maria,
     2.33. Muestre el tamaño del archivo practica228 en líneas.
+        ❯ wc -l practica228
+        13 practica228
+        #el archivo es el siguiente
+        Ana,
+        Ana,
+        Lourdes,
+        Javeir,
+        Maria,
+        Maria,
+        Marcos,
+        Sara,
+        Vanesa
+
+
+
+        sasas
     2.34. Muestre el tamaño del archivo practica228 en megas.
+        ❯ du -m practica228
+        0       practica228
     2.35. Usando cat ingrese los siguientes datos al archivo practica235, Peru, Tunez, Mexico, Salvador, Argentina, Colombia
     2.36. Verifique que realiza el siguiente comando: $ls |sort –r |head -l
     2.37. Halle dos equivalencias al comando anterior.
